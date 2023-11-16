@@ -1,1 +1,7 @@
-<p>character works!</p>
+<div *ngIf="character">
+    <div *ngFor="let c of character.data">
+        <a routerLink=""></a>
+        <p>{{c.name}}</p>
+
+    </div>
+  </div>
