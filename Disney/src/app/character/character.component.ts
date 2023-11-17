@@ -25,5 +25,6 @@ export class CharacterComponent implements OnInit {
       return a.name < b.name ? -1 : 1;
     })
   }
+  
 
 }

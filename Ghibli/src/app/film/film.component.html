@@ -1,0 +1,7 @@
+<div *ngIf="film">
+    <div *ngFor="let f of film">
+        <a routerLink="/film/{{getLastPart(f.url)}}">
+            <p>{{f.title}}</p>
+        </a>
+    </div>
+</div>
