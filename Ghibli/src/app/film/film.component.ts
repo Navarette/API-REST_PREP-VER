@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Film } from '../model/film.model';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-film',
@@ -11,15 +12,23 @@ import { HttpClient } from '@angular/common/http';
 export class FilmComponent implements OnInit {
   film!: Film[];
   obs!: Observable<Film[]>;
-
-  constructor(public http: HttpClient) { }
+  activatedRoute: any;
+  id!: any;
+  constructor(
+    public http: HttpClient,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
-    this.obs = this.http.get<Film[]>('https://ghibliapi.vercel.app/films')
-    this.obs.subscribe(this.faiqualcosa)
+    this.route.params.subscribe(paramId => {
+      this.id = paramId['path']
+
+      this.obs = this.http.get<Film[]>(`https://ghibliapi.vercel.app/films${this.id}`)
+      this.obs.subscribe(this.res)
+    })
   }
 
-  faiqualcosa = (film: Film[]) => {
+  res = (film: Film[]) => {
     this.film = film
     console.log(film)
   }
