@@ -8,6 +8,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { CharacterComponent } from './character/character.component';
 import { LocationComponent } from './location/location.component';
 import { EpisodeComponent } from './episode/episode.component';
+import { CharacterSpecComponent } from './character-spec/character-spec.component';
+import { LocationSpecComponent } from './location-spec/location-spec.component';
+import { EpisodeSpecComponent } from './episode-spec/episode-spec.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { EpisodeComponent } from './episode/episode.component';
     HomeComponent,
     CharacterComponent,
     LocationComponent,
-    EpisodeComponent
+    EpisodeComponent,
+    CharacterSpecComponent,
+    LocationSpecComponent,
+    EpisodeSpecComponent
   ],
   imports: [
     BrowserModule,

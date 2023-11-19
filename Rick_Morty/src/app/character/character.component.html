@@ -1,9 +1,11 @@
 <h1>Characters</h1>
 <div *ngIf="character">
     <div *ngFor="let c of character.results">
-        <!-- <a routerLink="/specfilm/{{getLastPart(f.url)}}"> -->
-            <p>{{c.name}}</p>
-        <!-- </a> -->
+        <a routerLink="/characterSpec/{{getLastPart(c.url)}}">
+        <p>{{c.name}}</p>
+        </a>
     </div>
 </div>
-<button><a href (click)="back()">Back</a></button>
+<p>
+    <a href (click)="back()">Back to the home page</a>
+</p>

@@ -13,6 +13,8 @@ import { Location } from '@angular/common';
 export class CharacterComponent implements OnInit {
   character!: Character;
   obs!: Observable<Character>;
+  activatedRoute: any;
+  id!: any;
 
   constructor(
     public http: HttpClient,
@@ -21,7 +23,8 @@ export class CharacterComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.obs = this.http.get<Character>('https://rickandmortyapi.com/api/character')
+
+    this.obs = this.http.get<Character>(`https://rickandmortyapi.com/api/character`)
     this.obs.subscribe(this.res)
 
   }
@@ -30,11 +33,12 @@ export class CharacterComponent implements OnInit {
     this.character = character
     console.log(character)
   }
-  getLastPart(arg0: string) {
-    const list = arg0.split("/")
-    list.pop()
-    return list.pop()
 
+  getLastPart(arg0: string) {
+    console.log(arg0)
+
+    const list = arg0.split("/")
+    return list.pop()
   }
 
   back(): void {

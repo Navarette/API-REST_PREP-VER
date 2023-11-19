@@ -1,9 +1,12 @@
 <h1>Locations</h1>
-<div *ngIf="location">
-    <div *ngFor="let e of location.results">
-        <!-- <a routerLink="/specfilm/{{getLastPart(f.url)}}"> -->
-            <p>{{e.name}}
+<div *ngIf="location1">
+    <div *ngFor="let l of location1.results">
+        <a routerLink="/locationSpec/{{getLastPart(l.url)}}">
+            <p>{{l.name}}
                </p>
-        <!-- </a> -->
+        </a>
     </div>
 </div>
+<p>
+    <a href (click)="back()">Back to the home page</a>
+</p>

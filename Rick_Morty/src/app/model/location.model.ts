@@ -1,5 +1,5 @@
 import { CharacterResult } from "./character.model"
-export interface Location {
+export interface Location1 {
     info: Info
     results: LocationResult[]
 }

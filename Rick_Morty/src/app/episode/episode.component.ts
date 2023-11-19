@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Episode } from '../model/episode.model';
+import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-episode',
   templateUrl: './episode.component.html',
@@ -13,9 +15,12 @@ export class EpisodeComponent implements OnInit {
   obs!: Observable<Episode>;
   activatedRoute: any;
   id!: any;
+
   constructor(
     public http: HttpClient,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location: Location
+
   ) { }
 
   ngOnInit(): void {
@@ -30,8 +35,10 @@ export class EpisodeComponent implements OnInit {
   }
   getLastPart(arg0: string) {
     const list = arg0.split("/")
-    list.pop()
     return list.pop()
 
+  }
+  back(): void {
+    this.location.back();
   }
 }
