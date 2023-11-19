@@ -1,31 +1,30 @@
+<h1>Character</h1>
 <div *ngIf="characterSpec">
     <h2>
-        {{characterSpec.name}}
+       Name: {{characterSpec.name}}
     </h2>
     <img src="{{characterSpec.image}}" alt="img">
     <h2>
         {{characterSpec.status}}
     </h2>
     <h2>
-        {{characterSpec.species}}
+        Species: {{characterSpec.species}}
+    </h2>
+
+    <h2>
+        Gender: {{characterSpec.gender}}
     </h2>
     <h2>
-        {{characterSpec.type}}
-    </h2>
-    <h2>
-        {{characterSpec.gender}}
-    </h2>
-    <h2>
-        {{characterSpec.origin.name}}
+        Origin: {{characterSpec.origin.name}}
     </h2>
     <h2>
         {{characterSpec.episode}}
     </h2>
     <h2>
-        {{characterSpec.url}}
+        Url: {{characterSpec.url}}
     </h2>
     <h2>
-        {{characterSpec.created}}
+        Created: {{characterSpec.created}}
     </h2>
 
 </div>
