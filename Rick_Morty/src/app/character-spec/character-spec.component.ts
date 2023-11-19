@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CharacterSpec } from '../model/characterSpec.model';
+import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-character-spec',
   templateUrl: './character-spec.component.html',
@@ -16,7 +18,9 @@ export class CharacterSpecComponent {
 
   constructor(
     private route: ActivatedRoute,
-    public http: HttpClient
+    public http: HttpClient,
+    private location: Location
+
   ) { }
 
   ngOnInit() {
@@ -31,5 +35,8 @@ export class CharacterSpecComponent {
   res = (characterSpec: CharacterSpec) => {
     this.characterSpec = characterSpec
     console.log(characterSpec)
+  }
+  back(): void {
+    this.location.back();
   }
 }

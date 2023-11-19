@@ -1,3 +1,4 @@
+import { EpisodeResult } from "./episode.model";
 export interface CharacterSpec {
     id: number;
     name: string;
@@ -8,7 +9,7 @@ export interface CharacterSpec {
     origin: Location;
     location: Location;
     image: string;
-    episode: string[];
+    episode: EpisodeResult[];
     url: string;
     created: Date;
 }

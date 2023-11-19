@@ -1,6 +1,26 @@
 <h1>Location</h1>
 <div *ngIf="locationSpec">
-<h3>
-    {{locationSpec.name}}
-</h3>
+    <h3>
+        Name: {{locationSpec.name}}
+    </h3>
+    <h3>
+        Type: {{locationSpec.type}}
+    </h3>
+    <h3>
+        Dimension: {{locationSpec.dimension}}
+    </h3>
+
+    <h3>
+        url: {{locationSpec.url}}
+    </h3>
+    <h3>
+        Created: {{locationSpec.created}}
+    </h3>
+</div>
+<div *ngFor="let c of character">
+    <a routerLink="/characterSpec/{{getLastPart(c.url)}}">
+        <h3>
+            {{c}}
+        </h3>
+    </a>
 </div>
