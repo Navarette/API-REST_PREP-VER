@@ -20,22 +20,19 @@ export class FilmComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(paramId => {
-      this.id = paramId['path']
-
-      this.obs = this.http.get<Film[]>(`https://ghibliapi.vercel.app/films${this.id}`)
-      this.obs.subscribe(this.res)
-    })
+    this.obs = this.http.get<Film[]>('https://ghibliapi.vercel.app/films')
+    this.obs.subscribe(this.res)
+    
   }
 
   res = (film: Film[]) => {
     this.film = film
     console.log(film)
   }
-  getLastPart(arg0: string) {
-    const list = arg0.split("/")
-    list.pop()
-    return list.pop()
+  // getLastPart(arg0: string) {
+  //   const list = arg0.split("/")
+  //   list.pop()
+  //   return list.pop()
 
-  }
+  // }
 }

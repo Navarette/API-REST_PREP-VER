@@ -1,0 +1,9 @@
+<h1>Locations</h1>
+<div *ngIf="location">
+    <div *ngFor="let e of location.results">
+        <!-- <a routerLink="/specfilm/{{getLastPart(f.url)}}"> -->
+            <p>{{e.name}}
+               </p>
+        <!-- </a> -->
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<h1>Episode</h1>
+<div *ngIf="episode">
+    <div *ngFor="let e of episode.results">
+        <!-- <a routerLink="/specfilm/{{getLastPart(f.url)}}"> -->
+            <p>{{e.name}}
+                {{e.episode}}</p>
+        <!-- </a> -->
+    </div>
+</div>
