@@ -32,4 +32,9 @@ export class EpisodeSpecComponent {
     this.episodeSpec = episodeSpec
     console.log(episodeSpec)
   }
+  getLastPart(arg0: string) {
+    const list = arg0.split("/")
+    return list.pop()
+
+  }
 }

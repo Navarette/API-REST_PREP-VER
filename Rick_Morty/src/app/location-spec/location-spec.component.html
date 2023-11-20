@@ -17,8 +17,8 @@
         Created: {{locationSpec.created}}
     </h3>
 </div>
-<div *ngFor="let c of character">
-    <a routerLink="/characterSpec/{{getLastPart(c.url)}}">
+<div *ngFor="let c of locationSpec.residents">
+    <a routerLink="/characterSpec/{{getLastPart(c)}}">
         <h3>
             {{c}}
         </h3>

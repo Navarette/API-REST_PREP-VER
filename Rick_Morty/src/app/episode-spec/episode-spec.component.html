@@ -7,11 +7,16 @@
         First air date: {{episodeSpec.air_date}}
     </h2>
     <h2>
-        Number: {{episodeSpec.episode}}
+        Episode number: {{episodeSpec.episode}}
     </h2>
-    <h2>
-        Characters: {{episodeSpec.characters}}
-    </h2>
+    <h2>Characters:</h2>
+    <div *ngFor="let c of episodeSpec.characters">
+        <a routerLink="/characterSpec/{{getLastPart(c)}}">
+            <h3>
+                {{c}}
+            </h3>
+        </a>
+    </div>
     <h2>
         url: {{episodeSpec.url}}
     </h2>

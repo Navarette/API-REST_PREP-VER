@@ -9,7 +9,7 @@ export interface CharacterSpec {
     origin: Location;
     location: Location;
     image: string;
-    episode: EpisodeResult[];
+    episode: string[];
     url: string;
     created: Date;
 }

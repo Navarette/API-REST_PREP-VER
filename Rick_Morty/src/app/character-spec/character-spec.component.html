@@ -1,7 +1,7 @@
 <h1>Character</h1>
 <div *ngIf="characterSpec">
     <h2>
-       Name: {{characterSpec.name}}
+        Name: {{characterSpec.name}}
     </h2>
     <img src="{{characterSpec.image}}" alt="img">
     <h2>
@@ -17,9 +17,22 @@
     <h2>
         Origin: {{characterSpec.origin.name}}
     </h2>
-    <h2>
-        {{characterSpec.episode}}
-    </h2>
+    <h2>Location:</h2>
+    <a href="/locationSpec/{{getLastPart(characterSpec.location.url)}}">
+        
+        <h2>
+            {{characterSpec.location.name}}
+        </h2>
+    </a>
+    <h2>Episodes:</h2>
+
+    <div *ngFor="let e of characterSpec.episode">
+        <a href="/episodeSpec/{{getLastPart(e)}}">
+            <h2>
+                {{e}}
+            </h2>
+        </a>
+    </div>
     <h2>
         Url: {{characterSpec.url}}
     </h2>
